@@ -1,0 +1,21 @@
+body{
+     text-align: center;
+     font-family: Georgia;
+}
+
+#board{
+     height: 532px;
+     width: 475px;
+     margin: 0 auto;
+     background-color: rgba(114, 109, 109, 0.6);
+     border-radius: 5px;
+     display: flex;
+     flex-wrap: wrap;
+     border: 10px solid rgb(41, 77, 67);
+}
+
+.card{
+     height: 120px;
+     width: 95px;
+     margin: 2px;
+}
