@@ -110,7 +110,10 @@ function update() {
 }
 
 function restartGame() {
-     document.getElementById('board').innerHTML = '';
+
+     console.log("Game restarted");
+
+    document.getElementById('board').innerHTML = '';
 
      errors = 0;
      matchedCards = 0;
