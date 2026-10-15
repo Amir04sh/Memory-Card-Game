@@ -36,11 +36,14 @@ function shuffleCards() {
 }
 
 function startGame() {
+     board = [];
      for (let r = 0; r <  rows; r++) {
           let row = []
           for (let c = 0; c < columns; c++) {
-               let cardImg = cardSet.pop();
+               /*let cardImg = cardSet.pop();*/
+               let cardImg = cardSet[r * columns + c];
                row.push(cardImg);
+               
 
                let card = document.createElement('img');
                card.id = r.toString() + "-" + c.toString();
@@ -117,7 +120,6 @@ function restartGame() {
 
      errors = 0;
      matchedCards = 0;
-     board = [];
      card1Selected = null;
      card2Selected = null;
 
