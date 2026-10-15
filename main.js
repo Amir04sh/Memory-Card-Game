@@ -14,6 +14,7 @@ var rows = 4;
 var columns = 3;
 var card1Selected;
 var card2Selected;
+var matchedCards = 0;
 
 window.onload = function() {
      shuffleCards();
@@ -93,9 +94,32 @@ function update() {
           card1Selected.src = "pattern.png" ;
           card2Selected.src = "pattern.png" ;
           errors += 1;
-          document.getElementById('errors').innerText = errors;
-     }
 
+      document.getElementById('errors').innerText = errors;
+ } else {
+      matchedCards += 2;
+
+      if (matchedCards === rows * columns) {
+     setTimeout(restartGame, 2000);
+}
+ }
+
+ card1Selected = null;
+ card2Selected = null;
+
+}
+
+function restartGame() {
+     document.getElementById('board').innerHTML = '';
+
+     errors = 0;
+     matchedCards = 0;
+     board = [];
      card1Selected = null;
      card2Selected = null;
-};
+
+     document.getElementById('errors').innerText = errors;
+
+     shuffleCards();
+     startGame();
+}
